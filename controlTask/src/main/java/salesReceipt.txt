@@ -1,0 +1,8 @@
+=================SALES RECEIPT=================
+QTY    DESCRIPTION         PRICE     TOTAL
+_______________________________________________
+003  | Herring          |   7,30 |   21,90
+===============================================
+Total amount without discount    21,90
+Dscont                            0,00
+TOTAL                                   21,90

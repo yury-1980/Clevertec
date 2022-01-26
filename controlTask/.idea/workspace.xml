@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="controlTask:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="879c67bc-b7ff-4106-b40d-856f12ffbf34" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="23gdj5hWuIo6ePO5kkoqhtc632A" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../activation.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Clevertec\controlTask\lib" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="controlTask" />
+      <option name="PROGRAM_PARAMETERS" value="3-1 2-5 5-3 2-7 5-2 11-5 card-1111" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="109" y="50" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1643191705761">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="109" y="50" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1643191705761" />
+    <state x="445" y="192" key="#com.intellij.ide.util.MemberChooser" timestamp="1642600954150">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="445" y="192" key="#com.intellij.ide.util.MemberChooser/0.0.1280.984@0.0.1280.984" timestamp="1642600954150" />
+    <state x="371" y="311" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1643179569525">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="371" y="311" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.984@0.0.1280.984" timestamp="1643179569525" />
+    <state x="268" y="180" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1643182784670">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="268" y="180" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1280.984@0.0.1280.984" timestamp="1643182784670" />
+    <state x="370" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1643191546299">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="370" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.984@0.0.1280.984" timestamp="1643191546299" />
+    <state x="92" y="92" width="1096" height="800" key="DiffContextDialog" timestamp="1643042717153">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="92" y="92" width="1096" height="800" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1643042717153" />
+    <state x="347" y="262" key="FileChooserDialogImpl" timestamp="1643134612627">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="347" y="262" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1643134612627" />
+    <state width="1236" height="242" key="GridCell.Tab.0.bottom" timestamp="1643184765166">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="242" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1643184765166" />
+    <state width="1236" height="242" key="GridCell.Tab.0.center" timestamp="1643184765166">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="242" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1643184765166" />
+    <state width="1236" height="242" key="GridCell.Tab.0.left" timestamp="1643184765165">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="242" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1643184765165" />
+    <state width="1236" height="242" key="GridCell.Tab.0.right" timestamp="1643184765166">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="242" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1643184765166" />
+    <state width="1236" height="279" key="GridCell.Tab.1.bottom" timestamp="1643015441651">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="279" key="GridCell.Tab.1.bottom/0.0.1280.984@0.0.1280.984" timestamp="1643015441651" />
+    <state width="1236" height="279" key="GridCell.Tab.1.center" timestamp="1643015441651">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="279" key="GridCell.Tab.1.center/0.0.1280.984@0.0.1280.984" timestamp="1643015441651" />
+    <state width="1236" height="279" key="GridCell.Tab.1.left" timestamp="1643015441651">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="279" key="GridCell.Tab.1.left/0.0.1280.984@0.0.1280.984" timestamp="1643015441651" />
+    <state width="1236" height="279" key="GridCell.Tab.1.right" timestamp="1643015441651">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="279" key="GridCell.Tab.1.right/0.0.1280.984@0.0.1280.984" timestamp="1643015441651" />
+    <state x="220" y="226" key="IDE.errors.dialog" timestamp="1642172427928">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="220" y="226" key="IDE.errors.dialog/0.0.1280.984@0.0.1280.984" timestamp="1642172427928" />
+    <state x="204" y="102" key="SettingsEditor" timestamp="1643182755499">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="204" y="102" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1643182755499" />
+    <state x="457" y="405" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1643042717061">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="457" y="405" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1643042717061" />
+    <state x="298" y="111" key="new project wizard" timestamp="1643121040557">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="298" y="111" key="new project wizard/0.0.1280.984@0.0.1280.984" timestamp="1643121040557" />
+    <state x="483" y="248" key="refactoring.ChangeSignatureDialog" timestamp="1642531430880">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="483" y="248" key="refactoring.ChangeSignatureDialog/0.0.1280.984@0.0.1280.984" timestamp="1642531430880" />
+  </component>
+</project>
