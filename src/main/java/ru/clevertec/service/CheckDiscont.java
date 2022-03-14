@@ -19,8 +19,13 @@ public class CheckDiscont {
 
         for (String arg : args) {
             str = arg.split("-");
+            if (!str[0].matches("^(([1-9]|[0-9]\\d|100)|card|Card)$"))
+                continue;
+            if (!str[1].matches("^([1-9]|1[0-9]|20)$"))
+                continue;
             int id;
             int num;
+
 
             if (!(str[0].equals("card"))) {
 

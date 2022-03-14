@@ -19,7 +19,7 @@ public class Reader {
         double price;
         boolean discount;
         String regId = "^([1-9]|[0-9]\\d|100)$";
-        String regTitle = "^[A-ZА-Я][a-zа-я]{3,30}$";
+        String regTitle = "^[A-ZА-Я][a-zа-я]{2,29}$";
         String regPrice = "^(([1-9][0-9]\\.[0-9]{2})|100.[0-9]{2})$|^([1-9]\\.[0-9]{2})$";
         String regDiscont = "^true|false$";
         String str;
