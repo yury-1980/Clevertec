@@ -1,7 +1,7 @@
-package fabric;
+package ru.clevertec.fabric;
 
-import model.Check;
-import service.CheckDiscont;
+import ru.clevertec.model.Check;
+import ru.clevertec.service.CheckDiscont;
 
 import java.io.File;
 import java.io.FileWriter;

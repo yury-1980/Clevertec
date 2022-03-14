@@ -1,6 +1,8 @@
-import fabric.Email;
-import fabric.Writer;
-import service.CheckDiscont;
+package ru.clevertec;
+
+import ru.clevertec.fabric.Email;
+import ru.clevertec.fabric.Writer;
+import ru.clevertec.service.CheckDiscont;
 
 public class Main {
 

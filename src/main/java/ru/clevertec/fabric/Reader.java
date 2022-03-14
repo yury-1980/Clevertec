@@ -1,6 +1,6 @@
-package fabric;
+package ru.clevertec.fabric;
 
-import model.Product;
+import ru.clevertec.model.Product;
 
 import java.io.*;
 import java.util.*;

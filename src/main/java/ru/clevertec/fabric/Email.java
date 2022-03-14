@@ -1,6 +1,6 @@
-package fabric;
+package ru.clevertec.fabric;
 
-import model.Check;
+import ru.clevertec.model.Check;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

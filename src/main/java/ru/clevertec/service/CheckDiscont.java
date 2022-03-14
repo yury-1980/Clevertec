@@ -1,8 +1,8 @@
-package service;
+package ru.clevertec.service;
 
-import fabric.Reader;
-import model.Check;
-import model.Product;
+import ru.clevertec.fabric.Reader;
+import ru.clevertec.model.Check;
+import ru.clevertec.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
