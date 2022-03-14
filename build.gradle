@@ -86,5 +86,3 @@ task downloadCheckImage(type: CustomTask){
     sourceUrl = 'https://github.com/yury-1980/hello-world/raw/main/file.png'
     target = new File('src/main/resources/file.png')
 }
-
-
