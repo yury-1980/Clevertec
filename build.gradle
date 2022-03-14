@@ -48,22 +48,6 @@ jar {
     from configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
 }
 
-/*
-task filePng{
-    URL url = null;
-    try {
-        delete("/src/main/java/ru/clevertec/picture/file.png")
-        url = new URL("https://github.com/yury-1980/hello-world/raw/main/file.png");
-        InputStream inputStream = url.openStream();
-        String file = new File("").getAbsolutePath()
-        Files.copy(inputStream, new File(file + "/src/main/java/ru/clevertec/picture/file.png").toPath());
-    } catch (MalformedURLException e) {
-        e.printStackTrace();
-    } catch (IOException e) {
-        println("File Already Exists")
-    }
-}*/
-
 class CustomTask extends DefaultTask {
 
     @Input
