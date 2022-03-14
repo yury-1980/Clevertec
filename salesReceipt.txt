@@ -1,11 +1,7 @@
 =================SALES RECEIPT=================
 QTY    DESCRIPTION         PRICE     TOTAL
 _______________________________________________
-001  | Squid            |  20,00 |   18,00
-012  | Herring          |   7,30 |   87,60
-005  | Bread            |   1,20 |    5,40
-005  | Ball             |  10,50 |   47,25
 ===============================================
-Total amount without discount   166,10
-Dscont                            7,85
-TOTAL                                  158,25
+Total amount without discount     0,00
+Dscont                            0,00
+TOTAL                                    0,00
