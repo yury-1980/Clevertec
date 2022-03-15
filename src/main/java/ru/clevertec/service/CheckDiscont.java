@@ -19,16 +19,16 @@ public class CheckDiscont {
 
         for (String arg : args) {
             str = arg.split("-");
-            if (!str[0].matches("^(([1-9]|[0-9]\\d|100)|card|Card)$"))
-                continue;
-            if (!str[1].matches("^([1-9]|1[0-9]|20)$"))
-                continue;
-            int id;
-            int num;
 
+            int id;// консоль
+            int num;// консоль
 
             if (!(str[0].equals("card"))) {
 
+                if ((!str[0].matches("^([1-9]\\d?|100)$"))
+                        || (!str[1].matches("^([1-9]|1[0-9]|20)$"))) {
+                    continue;
+                }
                 try {
                     id = Integer.parseInt(str[0]);// id из консоли
                     num = Integer.parseInt(str[1]);// кол-во из консоли

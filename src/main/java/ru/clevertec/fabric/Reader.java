@@ -18,9 +18,9 @@ public class Reader {
         int id;
         double price;
         boolean discount;
-        String regId = "^([1-9]|[0-9]\\d|100)$";
-        String regTitle = "^[A-ZА-Я][a-zа-я]{2,29}$";
-        String regPrice = "^(([1-9][0-9]\\.[0-9]{2})|100.[0-9]{2})$|^([1-9]\\.[0-9]{2})$";
+        String regId = "^([1-9]\\d?|100)$";
+        String regTitle = "^([A-Z][a-z]{2,29})|([А-Я][а-я]{2,29})$";
+        String regPrice = "^([1-9]\\d?\\.\\d\\d|100\\.00)$";
         String regDiscont = "^true|false$";
         String str;
 
@@ -37,12 +37,14 @@ public class Reader {
                 str = scanner.next();
                 if (!str.matches(regId)) {
                     listInvalidData.add(str);
+                    str = "0";
                     flag++;
                 }
                 id = Integer.parseInt(str);
                 str = scanner.next();
                 if (!str.matches(regTitle)) {
                     listInvalidData.add(str);
+                    str = null;
                     flag++;
                 }
                 title = str;
@@ -50,6 +52,7 @@ public class Reader {
                 str = scanner.next();
                 if (!str.matches(regPrice)) {
                     listInvalidData.add(str);
+                    str = "0.0";
                     flag++;
                 }
                 price = Double.parseDouble(str);
@@ -57,6 +60,7 @@ public class Reader {
                 str = scanner.next();
                 if (!str.matches(regDiscont)) {
                     listInvalidData.add(str);
+                    str = "false";
                     flag++;
                 }
                 discount = Boolean.parseBoolean(str);

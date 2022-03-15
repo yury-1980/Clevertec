@@ -1,8 +1,9 @@
 =================SALES RECEIPT=================
 QTY    DESCRIPTION         PRICE     TOTAL
 _______________________________________________
-010  | Herring          |   7,30 |   73,00
+015  | Squid            |  20,01 |  270,14
+005  | Milk             |   1,50 |    6,75
 ===============================================
-Total amount without discount    73,00
-Discont                            0,00
-TOTAL                                   73,00
+Total amount without discount   307,65
+Discont                           30,76
+TOTAL                                  276,89

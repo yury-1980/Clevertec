@@ -1,3 +1,4 @@
+02.02 Milk 1.50 true
 1 Milk 1.50 true
 2 Herring 7.30 false
 3 Squid 20.01 true

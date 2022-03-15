@@ -1,8 +1,8 @@
 =================SALES RECEIPT=================
 QTY    DESCRIPTION         PRICE     TOTAL
 _______________________________________________
-010  | Herring          |   7,30 |   73,00
+005  | Milk             |   1,50 |    7,50
 ===============================================
-Total amount without discount    73,00
+Total amount without discount     7,50
 Discont                            0,00
-TOTAL                                   73,00
+TOTAL                                    7,50
