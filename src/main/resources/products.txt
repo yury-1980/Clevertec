@@ -1,3 +1,4 @@
+100.00 Vik 5.56 true
 02.02 Milk 1.50 true
 1 Milk 1.50 true
 2 Herring 7.30 false
