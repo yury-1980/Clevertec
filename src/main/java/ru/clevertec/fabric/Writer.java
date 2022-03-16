@@ -14,15 +14,13 @@ public class Writer {
 
     private static List<Check> checks = CheckDiscont.checkList;
     private static List<String> listInvalidData = Reader.listInvalidData;
-    private static String path = new File("").getAbsolutePath();
 
     public static void invalidDataWriting() {
         FileWriter writeToFile = null;
 
         try {
             String date = String.valueOf(new Date());
-            writeToFile = new FileWriter(path
-                    + "/src/main/resources/invalidData.txt", false);
+            writeToFile = new FileWriter("src/main/resources/invalidData.txt", false);
             writeToFile.write(date + "\n");
             for (String s : listInvalidData)
                 writeToFile.write(s + " ");
@@ -33,13 +31,11 @@ public class Writer {
             System.out.println("File not written!!!");
         }
     }
-
     public static void checkWritingFile() {
         FileWriter writeToFile = null;
 
         try {
-            writeToFile = new FileWriter(path
-                    + "/src/main/resources/salesReceipt.txt", false);
+            writeToFile = new FileWriter("src/main/resources/salesReceipt.txt", false);
         } catch (IOException e) {
             System.out.println("File not written!!!");
         }
@@ -57,11 +53,11 @@ public class Writer {
         print.printf("%s%9.2f\n", "Total amount without discount", Check.getSumTotal());
         print.printf("%s%32.2f\n", "Discont", Check.getDiscontSum());
         print.printf("%s%40.2f\n", "TOTAL", Check.getFinalAmount());
+        print.println(new Date());
 
         print.close();
         System.out.println();
-        System.out.println("the file is located: " + path
-                + "/src/main/resources/salesReceipt.txt");
+        System.out.println("the file is located: " + "src/main/resources/salesReceipt.txt");
     }
 
     public static void checkWritingConsol() {

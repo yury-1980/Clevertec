@@ -6,3 +6,4 @@ _______________________________________________
 Total amount without discount     7,50
 Discont                            0,00
 TOTAL                                    7,50
+Wed Mar 16 14:11:50 MSK 2022
