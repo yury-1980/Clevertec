@@ -1,8 +1,8 @@
-package service;
+package ru.clevertec.service;
 
-import fabric.Reader;
-import model.Check;
-import model.Product;
+import ru.clevertec.fabric.Reader;
+import ru.clevertec.model.Check;
+import ru.clevertec.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,11 +19,16 @@ public class CheckDiscont {
 
         for (String arg : args) {
             str = arg.split("-");
-            int id;
-            int num;
+
+            int id;// консоль
+            int num;// консоль
 
             if (!(str[0].equals("card"))) {
 
+                if ((!str[0].matches("^([1-9]\\d?|100)$"))
+                        || (!str[1].matches("^([1-9]|1[0-9]|20)$"))) {
+                    continue;
+                }
                 try {
                     id = Integer.parseInt(str[0]);// id из консоли
                     num = Integer.parseInt(str[1]);// кол-во из консоли

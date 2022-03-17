@@ -1,4 +1,4 @@
-package model;
+package ru.clevertec.model;
 
 public class Product {
     private String title;
