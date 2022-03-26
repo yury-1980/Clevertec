@@ -7,18 +7,35 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.List;
 
 public class Writer {
 
     private static List<Check> checks = CheckDiscont.checkList;
+    private static List<String> listInvalidData = Reader.listInvalidData;
 
-    public static void checkWritingFile() {
-        String path = new File("").getAbsolutePath();
+    public static void invalidDataWriting() {
         FileWriter writeToFile = null;
 
         try {
-            writeToFile = new FileWriter(path + "/salesReceipt.txt", false);
+            String date = String.valueOf(new Date());
+            writeToFile = new FileWriter("src/main/resources/invalidData.txt", false);
+            writeToFile.write(date + "\n");
+            for (String s : listInvalidData)
+                writeToFile.write(s + " ");
+            writeToFile.write("\n");
+            writeToFile.flush();
+            writeToFile.close();
+        } catch (IOException e) {
+            System.out.println("File not written!!!");
+        }
+    }
+    public static void checkWritingFile() {
+        FileWriter writeToFile = null;
+
+        try {
+            writeToFile = new FileWriter("src/main/resources/salesReceipt.txt", false);
         } catch (IOException e) {
             System.out.println("File not written!!!");
         }
@@ -34,12 +51,13 @@ public class Writer {
         }
         print.printf("===============================================\n");
         print.printf("%s%9.2f\n", "Total amount without discount", Check.getSumTotal());
-        print.printf("%s%32.2f\n", "Dscont", Check.getDiscontSum());
+        print.printf("%s%32.2f\n", "Discont", Check.getDiscontSum());
         print.printf("%s%40.2f\n", "TOTAL", Check.getFinalAmount());
+        print.println(new Date());
 
         print.close();
         System.out.println();
-        System.out.println("the file is located: " + path);
+        System.out.println("the file is located: " + "src/main/resources/salesReceipt.txt");
     }
 
     public static void checkWritingConsol() {
@@ -54,7 +72,7 @@ public class Writer {
         }
         System.out.printf("===============================================\n");
         System.out.printf("%s%9.2f\n", "Total amount without discount", Check.getSumTotal());
-        System.out.printf("%s%32.2f\n", "Dscont", Check.getDiscontSum());
+        System.out.printf("%s%32.2f\n", "Discont", Check.getDiscontSum());
         System.out.printf("%s%40.2f\n", "TOTAL", Check.getFinalAmount());
     }
 }

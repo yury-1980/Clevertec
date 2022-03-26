@@ -2,10 +2,14 @@ package ru.clevertec.fabric;
 
 import ru.clevertec.model.Product;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class Reader {
+    static List<String> listInvalidData = new ArrayList<>();
 
     public static Map<Integer, Product> getProduct() {
 
@@ -14,17 +18,54 @@ public class Reader {
         int id;
         double price;
         boolean discount;
-        String path = new File("").getAbsolutePath();
+        String regId = "^([1-9]\\d?|100)$";
+        String regTitle = "^([A-Z][a-z]{2,29})|([А-Я][а-я]{2,29})$";
+        String regPrice = "^([1-9]\\d?\\.\\d\\d|100\\.00)$";
+        String regDiscont = "^true|false$";
+        String str;
 
-        try (FileReader reader = new FileReader(path + "/products.txt");
+        try (FileReader reader = new FileReader("src/main/resources/products.txt");
              Scanner scanner = new Scanner(reader)) {
             scanner.useLocale(Locale.ENGLISH);
 
-            while (scanner.hasNext()) {
-                title = scanner.next();
-                id = scanner.nextInt();
-                price = scanner.nextDouble();
-                discount = scanner.nextBoolean();
+            while (scanner.hasNextLine()) {
+                int flag = 0;
+
+                str = scanner.next();
+                if (!str.matches(regId)) {
+                    listInvalidData.add(str);
+                    str = "0";
+                    flag++;
+                }
+                id = Integer.parseInt(str);
+                str = scanner.next();
+                if (!str.matches(regTitle)) {
+                    listInvalidData.add(str);
+                    str = null;
+                    flag++;
+                }
+                title = str;
+
+                str = scanner.next();
+                if (!str.matches(regPrice)) {
+                    listInvalidData.add(str);
+                    str = "0.0";
+                    flag++;
+                }
+                price = Double.parseDouble(str);
+
+                str = scanner.next();
+                if (!str.matches(regDiscont)) {
+                    listInvalidData.add(str);
+                    str = "false";
+                    flag++;
+                }
+                discount = Boolean.parseBoolean(str);
+
+                if (flag != 0) {// Для выбора конкретных не валидных данных
+                    continue;
+                }
+
                 productMap.put(id, new Product(title, id, price, discount));
             }
 
@@ -33,14 +74,6 @@ public class Reader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // Если массив не прочитается из файла. Для работы программы
-        productMap.put(11, new Product("Ball", 11, 10.5, true));
-        productMap.put(12, new Product("Slippers", 12, 7.3, false));
-        productMap.put(13, new Product("Pen", 13, 0.8, false));
-        productMap.put(14, new Product("Pencil", 14, 0.9, true));
-        productMap.put(15, new Product("WristWatch", 15, 45, true));
-        productMap.put(16, new Product("Stool", 16, 25, false));
-        productMap.put(17, new Product("Pasta", 17, 1.2, true));
 
         return productMap;
     }

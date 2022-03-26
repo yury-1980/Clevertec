@@ -27,7 +27,7 @@ public class Email {
             message.setSubject("My Check!!!");
             message.setText(String.format("%s%.2f\n%s%.2f\n%s%.2f\n%s",
                     "Total amount without discount: ", Check.getSumTotal(),
-                    "Dscont: ", Check.getDiscontSum(), "TOTAL: ", Check.getFinalAmount(),
+                    "Discont: ", Check.getDiscontSum(), "TOTAL: ", Check.getFinalAmount(),
                     new Date()));
             transport = mailSession.getTransport();
             transport.connect(null, "rgdbgbn$6745");
