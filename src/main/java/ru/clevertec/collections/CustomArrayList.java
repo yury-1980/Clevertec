@@ -223,7 +223,9 @@ public class CustomArrayList<E> implements ICustomList<E> {
 
         @Override
         public void removeIterator() {
-            remove(index);
+            if (index - 1 < 0)
+                index = 1;
+            remove(index - 1);// Т.к. next() возвращает mas[index++]
         }
 
         @Override
@@ -246,11 +248,11 @@ public class CustomArrayList<E> implements ICustomList<E> {
                 add(e);
             else {
                 masNew = new Object[size - index];
-                System.arraycopy(mas, index + 1, masNew, 0, size - index);
+                System.arraycopy(mas, index, masNew, 0, size - index);
                 size++;
                 calcCapacity();
-                set(1 + index, e);
-                System.arraycopy(masNew, 0, mas, index + 2, masNew.length);
+                set(index, e);
+                System.arraycopy(masNew, 0, mas, index + 1, masNew.length);
             }
         }
     }
