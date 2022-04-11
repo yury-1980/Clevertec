@@ -89,12 +89,9 @@ public class CustomArrayList<E> implements ICustomList<E> {
         E oldElement = (E) mas[index];
 
         if (index < size - 1) {
-            masNew = new Object[size];
-            System.arraycopy(mas, 0, masNew, 0, index);
-            System.arraycopy(mas, index + 1, masNew, index, size
-                    - 1 - index);
-            mas = new Object[capacity];
-            System.arraycopy(masNew, 0, mas, 0, size);
+            masNew = new Object[size - 1 - index];
+            System.arraycopy(mas, index + 1, masNew, 0, size - 1 - index);
+            System.arraycopy(masNew, 0, mas, index, masNew.length);
         }
         mas[size--] = null;
 
