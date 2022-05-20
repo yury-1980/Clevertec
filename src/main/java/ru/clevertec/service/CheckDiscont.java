@@ -7,6 +7,8 @@ import ru.clevertec.model.Product;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CheckDiscont {
 
@@ -43,9 +45,7 @@ public class CheckDiscont {
                     if (!(masProducts.contains(products.get(id)))) {
                         masProducts.add(products.get(id));// Добавление товара в чек
                         /* Кол-во товара */
-                        masProducts.get(masProducts.size() - 1).
-                                setNumber(masProducts.get(masProducts.size() - 1).
-                                        getNumber() + num);
+                        masProducts.get(masProducts.size() - 1).setNumber(num);
                     } else {
 
                         for (Product m : masProducts) {
@@ -66,36 +66,44 @@ public class CheckDiscont {
         }
 
 
-        double totalSumOfOneItem;// Общая сумма 1-го товара
         int productNumDiscont = 0;// Кол-во дисконтного товара
         List<Check> checks = new ArrayList<>();
 
-        for (Product p : masProducts) {// Подсчёт кол-ва дисконтных товаров
+        // Подсчёт кол-ва дисконтных товаров
+        productNumDiscont = masProducts.stream().filter(x -> x.isDiscount())
+                .map(x -> x.getNumber()).mapToInt(x -> x).sum();
 
-            if (p.isDiscount()) {
-                productNumDiscont = productNumDiscont + p.getNumber();
-            }
-        }
 
-        for (Product p : masProducts) {
-            // Общая сумма 1-го товара со скидкой
-            if (p.isDiscount() && productNumDiscont > 5 && str[0].equals("card")) {
-                totalSumOfOneItem = p.getNumber() * p.getPrice()
-                        - p.getNumber() * p.getPrice() * 0.1;
-                checks.add(new Check(p.getNumber(), p.getTitle(), p.getPrice(),
-                        totalSumOfOneItem));
-                Check.setDiscountTotal(Check.getDiscountTotal() + totalSumOfOneItem);
-            } else {// Общая сумма 1-го типа товара без скидки
-                totalSumOfOneItem = p.getNumber() * p.getPrice();
-                checks.add(new Check(p.getNumber(), p.getTitle(), p.getPrice(),
-                        totalSumOfOneItem));
-                // Общая стоимость всего нескидочного товара
-                Check.setTotalCostOfAllNon_discountItem(Check.getTotalCostOfAllNon_discountItem()
-                        + totalSumOfOneItem);
-            }
-            // Общая стоимость всего товара без скидки
-            Check.setSumTotal(Check.getSumTotal() + (p.getNumber() * p.getPrice()));
-        }
+        int finalProductNumDiscont = productNumDiscont;
+        String[] finalStr = str;
+
+        masProducts.stream()
+                .filter(p -> p.isDiscount() && (finalProductNumDiscont > 5)
+                        && finalStr[0].equals("card"))
+                .peek(p -> {
+            checks.add(new Check(p.getNumber(), p.getTitle(), p.getPrice(),
+                    p.getNumber() * p.getPrice() * 0.9));
+
+            // Общая стоимость всего скидочного товара
+            Check.setDiscountTotal((Check.getDiscountTotal()
+                    + p.getNumber() * p.getPrice() * 0.9));
+        }).collect(Collectors.toList());
+
+        masProducts.stream()
+                .filter(p -> !p.isDiscount())
+                .peek(p -> {
+                    checks.add(new Check(p.getNumber(), p.getTitle(), p.getPrice(),
+                            p.getNumber() * p.getPrice()));
+                    // Общая стоимость всего нескидочного товара
+                    Check.setTotalCostOfAllNon_discountItem(Check.getTotalCostOfAllNon_discountItem()
+                            + p.getNumber() * p.getPrice());
+                }).collect(Collectors.toList());
+
+        // Общая стоимость всего товара без скидки
+        Check.setSumTotal(masProducts.stream().map(p -> p.getNumber() * p.getPrice())
+                .mapToDouble(p -> p).sum());
+
+
         // Сумма всей скидки
         Check.setDiscontSum(Check.getSumTotal() - Check.getTotalCostOfAllNon_discountItem()
                 - Check.getDiscountTotal());
