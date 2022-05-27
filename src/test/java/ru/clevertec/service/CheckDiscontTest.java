@@ -13,7 +13,6 @@ public class CheckDiscontTest {
 
     static Map<Integer, Product> products;
     static List<Product> masProducts;
-    static List<Check> checks;
 
     @BeforeAll
     static void createProducts() {
@@ -27,8 +26,9 @@ public class CheckDiscontTest {
 
     @BeforeEach
     void setMasProducts() {
-        checks = CheckDiscont.checks;
-        masProducts = CheckDiscont.masProducts;
+      CheckDiscont.checks = new ArrayList<>();
+       CheckDiscont.masProducts = new ArrayList<>();
+       masProducts = CheckDiscont.masProducts;
 
         String[] args = {"3-15.5", "200-500", "2-5", "2-5", "1-15", "11-15",
                 "12-10", "card-6", "7-10"};
@@ -37,11 +37,10 @@ public class CheckDiscontTest {
 
     @AfterEach
     void deliteMasProduct() {
-        checks = null;
-        masProducts = null;
+        CheckDiscont.checks = null;
+        CheckDiscont.masProducts = null;
     }
 
-    //        @RepeatedTest(3)
     @Test
     @DisplayName("Тест на создание покупки")
     void getMasProductTest() {
