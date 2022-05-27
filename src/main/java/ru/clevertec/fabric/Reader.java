@@ -24,7 +24,10 @@ public class Reader {
         String regDiscont = "^true|false$";
         String str;
 
-        try (FileReader reader = new FileReader("src/main/resources/products.txt");
+        String path = new File("").getAbsolutePath();
+
+        try (FileReader reader = new FileReader(path
+                + "/src/main/resources/products.txt");
              Scanner scanner = new Scanner(reader)) {
             scanner.useLocale(Locale.ENGLISH);
 
@@ -66,7 +69,7 @@ public class Reader {
                     continue;
                 }
 
-                productMap.put(id, new Product(title, id, price, discount));
+                productMap.put(id, new Product( id,title, price, discount));
             }
 
         } catch (FileNotFoundException e) {
