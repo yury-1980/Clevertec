@@ -4,7 +4,7 @@ public class Check {
     private int number;
     private String title;
     private double price;
-    private double totalSumOfOneItem;// Общая сумма 1-го
+    private double totalSumOfOneItem;// Общая сумма 1-го типа
     private static double sumTotal;// Общая стоимость всего товара без скидки
     private static double discountTotal;// Общая стоимость всего скидочного товара
     private static double totalCostOfAllNon_discountItem;// Общая стоимость всего нескидочного товара
