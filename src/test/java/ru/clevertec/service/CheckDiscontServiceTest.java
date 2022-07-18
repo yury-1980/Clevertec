@@ -26,9 +26,9 @@ public class CheckDiscontServiceTest {
 
     @BeforeEach
     void setMasProducts() {
-      CheckDiscontService.checks = new ArrayList<>();
-       CheckDiscontService.masProducts = new ArrayList<>();
-       masProducts = CheckDiscontService.masProducts;
+      CheckProductServiceImpl.checks = new ArrayList<>();
+       CheckProductServiceImpl.masProducts = new ArrayList<>();
+       masProducts = CheckProductServiceImpl.masProducts;
 
         String[] args = {"3-15.5", "200-500", "2-5", "2-5", "1-15", "11-15",
                 "12-10", "card-6", "7-10"};
@@ -37,8 +37,8 @@ public class CheckDiscontServiceTest {
 
     @AfterEach
     void deliteMasProduct() {
-        CheckDiscontService.checks = null;
-        CheckDiscontService.masProducts = null;
+        CheckProductServiceImpl.checks = null;
+        CheckProductServiceImpl.masProducts = null;
     }
 
     @Test
@@ -63,7 +63,7 @@ public class CheckDiscontServiceTest {
     void setDiscountTotalTest() {
         String[] str = {"card"};
 
-        CheckDiscontService service = new CheckDiscontService();
+        CheckProductServiceImpl service = new CheckProductServiceImpl();
         service.setDiscountTotal(str);
         Assertions.assertEquals(245.25, Check.getDiscountTotal());
     }
@@ -72,7 +72,7 @@ public class CheckDiscontServiceTest {
     @DisplayName("Общая стоимость всего нескидочного товара, добавление в чек")
     void setTotalCostOfAllNon_discountItemTest() {
         String[] str = {"card"};
-        CheckDiscontService service = new CheckDiscontService();
+        CheckProductServiceImpl service = new CheckProductServiceImpl();
         service.setTotalCostOfAllNon_discountItem(str);
         Assertions.assertEquals(73, Check.getTotalCostOfAllNon_discountItem());
     }
@@ -80,7 +80,7 @@ public class CheckDiscontServiceTest {
     @Test
     @DisplayName("Полная стоимость всего товара (без скидки)")
     void setSumTotalTest() {
-        CheckDiscontService service = new CheckDiscontService();
+        CheckProductServiceImpl service = new CheckProductServiceImpl();
         service.setSumTotal();
         Assertions.assertEquals(345.5, Check.getSumTotal());
     }
@@ -88,7 +88,7 @@ public class CheckDiscontServiceTest {
     @Test
     @DisplayName("Сумма всей скидки")
     void setDiscontSumTest() {
-        CheckDiscontService service = new CheckDiscontService();
+        CheckProductServiceImpl service = new CheckProductServiceImpl();
         service.setDiscontSum();
         Assertions.assertEquals(27.25, Check.getDiscontSum());
     }
@@ -96,7 +96,7 @@ public class CheckDiscontServiceTest {
     @Test
     @DisplayName("Окончательная сумма (с учётом скидок)")
     void setFinalAmountTest() {
-        CheckDiscontService service = new CheckDiscontService();
+        CheckProductServiceImpl service = new CheckProductServiceImpl();
         service.setFinalAmount();
         Assertions.assertEquals(318.25, Check.getFinalAmount());
     }

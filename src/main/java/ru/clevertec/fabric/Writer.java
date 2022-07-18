@@ -1,7 +1,7 @@
 package ru.clevertec.fabric;
 
 import ru.clevertec.model.Check;
-import ru.clevertec.service.CheckDiscontService;
+import ru.clevertec.service.CheckProductServiceImpl;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Writer {
 
-    private static List<Check> checks = CheckDiscontService.checks;
+    private static List<Check> checks = CheckProductServiceImpl.checks;
     private static List<String> listInvalidData = Reader.listInvalidData;
 
     public static void invalidDataWriting() {
