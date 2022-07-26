@@ -1,21 +1,19 @@
-package ru.clevertec.fabric;
+package ru.clevertec.serviceDB;
 
 import ru.clevertec.model.Product;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
-public class Reader {
-    static List<String> listInvalidData = new ArrayList<>();
+public class ReaderDB {
+    public static List<String> listInvalidData = new ArrayList<>();
 
-    public static Map<Integer, Product> getProduct() {
+    public static Map<Integer, Product> getProduct(ResultSet resultSet) {
 
         Map<Integer, Product> productMap = new HashMap<>();
-        String title;
         int id;
+        String title;
         double price;
         boolean discount;
         String regId = "^([1-9]\\d?|100)$";
@@ -24,21 +22,20 @@ public class Reader {
         String regDiscont = "^true|false$";
         String str;
 
-        try (FileReader reader = new FileReader("src/main/resources/products.txt");
-             Scanner scanner = new Scanner(reader)) {
-            scanner.useLocale(Locale.ENGLISH);
+        try {
 
-            while (scanner.hasNextLine()) {
+            while (resultSet.next()) {
                 int flag = 0;
 
-                str = scanner.next();
+                str = String.valueOf(resultSet.getInt("id_product"));
                 if (!str.matches(regId)) {
                     listInvalidData.add(str);
                     str = "0";
                     flag++;
                 }
                 id = Integer.parseInt(str);
-                str = scanner.next();
+
+                str = resultSet.getString("name");
                 if (!str.matches(regTitle)) {
                     listInvalidData.add(str);
                     str = null;
@@ -46,7 +43,7 @@ public class Reader {
                 }
                 title = str;
 
-                str = scanner.next();
+                str = String.valueOf(resultSet.getString("price"));
                 if (!str.matches(regPrice)) {
                     listInvalidData.add(str);
                     str = "0.0";
@@ -54,7 +51,7 @@ public class Reader {
                 }
                 price = Double.parseDouble(str);
 
-                str = scanner.next();
+                str = String.valueOf(resultSet.getString("discount"));
                 if (!str.matches(regDiscont)) {
                     listInvalidData.add(str);
                     str = "false";
@@ -66,13 +63,13 @@ public class Reader {
                     continue;
                 }
 
-                productMap.put(id, new Product(title, id, price, discount));
+                productMap.put(id, new Product(id, title, price, discount));
             }
 
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found!!!");
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (NoSuchElementException e) {
+            System.out.println("Была считана пустая строка!!!");
+        } catch (SQLException throwables) {
+            System.out.println("Not reader DB!");
         }
 
         return productMap;
