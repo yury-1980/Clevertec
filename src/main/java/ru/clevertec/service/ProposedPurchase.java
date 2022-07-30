@@ -1,8 +1,8 @@
 package ru.clevertec.service;
 
-import ru.clevertec.serviceDB.ProcessingDB;
-import ru.clevertec.serviceDB.ProductProcessingDB_Impl;
 import ru.clevertec.model.Product;
+import ru.clevertec.orm.CrudDB;
+import ru.clevertec.orm.ProductCrudDB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +11,9 @@ import java.util.Map;
 //3-15.5 200-500 2-5 2-5 1-15 11-15 12-10 card-6 7-10
 public class ProposedPurchase {
 
-    ProcessingDB productProcessingDB = new ProductProcessingDB_Impl();
+    CrudDB crudDB = new ProductCrudDB();
     // Массив товара исходный
-    Map<Integer, Product> products = productProcessingDB.read_DB();
+    Map<Integer, Product> products = crudDB.read_DB();
 
     // Массив предпологаемой покупки
     static List<Product> masProducts = new ArrayList<>();

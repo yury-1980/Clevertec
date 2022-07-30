@@ -1,10 +1,10 @@
-package ru.clevertec.serviceDB;
+package ru.clevertec.orm;
 
 import ru.clevertec.model.Product;
 
 import java.util.Map;
 
-public interface ProcessingDB {
+public interface CrudDB {
 
     Product create(int id, String name, double price, boolean discount);
     Map<Integer, Product> read_DB();

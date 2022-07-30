@@ -1,4 +1,4 @@
-package ru.clevertec.serviceDB;
+package ru.clevertec.orm;
 
 import ru.clevertec.model.Product;
 
@@ -9,7 +9,7 @@ import java.util.*;
 public class ReaderDB {
     public static List<String> listInvalidData = new ArrayList<>();
 
-    public static Map<Integer, Product> getProduct(ResultSet resultSet) {
+    public static Map<Integer, Product> getAllProducts(ResultSet resultSet) {
 
         Map<Integer, Product> productMap = new HashMap<>();
         int id;
