@@ -13,7 +13,7 @@ public class ProposedPurchase {
 
     CrudDB crudDB = new ProductCrudDB();
     // Массив товара исходный
-    Map<Integer, Product> products = crudDB.read_DB();
+    Map<Integer, Product> products = crudDB.readAllDB();
 
     // Массив предпологаемой покупки
     static List<Product> masProducts = new ArrayList<>();

@@ -8,6 +8,7 @@ plugins {
     id 'application'
     id 'groovy'
     id 'custom'
+    id 'war'
 //    id 'io.freefair.aspectj.post-compile-weaving' version '5.3.0'
 //    id 'idea'
 }
@@ -15,9 +16,11 @@ plugins {
 repositories {
     mavenLocal()
     mavenCentral()
-    /*maven {
-        url = 'http://repo.maven.apache.org/maven2'
-    }*/
+//   url = 'https://repository.aspose.com/repo/'
+    maven {
+        url = 'https://repository.aspose.com/repo/'
+//        url = 'http://repo.maven.apache.org/maven2'
+    }
 }
 
 
@@ -34,6 +37,10 @@ dependencies {
     implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.14.0'
 // https://mvnrepository.com/artifact/org.postgresql/postgresql
     implementation 'org.postgresql:postgresql:42.3.3'
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+    compileOnly 'javax:javaee-api:7.0'
+    implementation(group: 'com.aspose', name: 'aspose-words', version: '22.7', classifier: 'jdk16')
 
 
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
@@ -105,7 +112,7 @@ jar {
     manifest {
         attributes 'Main-Class': 'ru.clevertec.Main'
     }
-    from configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    // from configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
 }
 
 /*test {

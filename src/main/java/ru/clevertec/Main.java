@@ -1,6 +1,8 @@
 package ru.clevertec;
 
-import ru.clevertec.dao.ProductConnectionDB;
+import ru.clevertec.controller.ConvertTxt_Pdf;
+import ru.clevertec.controller.Convertible;
+import ru.clevertec.dao.ConnectionDB;
 import ru.clevertec.fabric.Writer;
 import ru.clevertec.orm.CrudDB;
 import ru.clevertec.orm.ProductCrudDB;
@@ -12,7 +14,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ProductConnectionDB productConnectionDB = ProductConnectionDB.getInstance();
+        String[] strArgs = {"1-15", "11-15"};
+
+        if (args.length == 0)
+            args = strArgs;
+
+        ConnectionDB productConnectionDB = ConnectionDB.getInstance();
         CrudDB crudDB = new ProductCrudDB();
 
         ProposedPurchase proposedPurchase = new ProposedPurchase();
@@ -23,12 +30,14 @@ public class Main {
         Writer.checkWritingFile();
         Writer.invalidDataWriting();
 //        Email.sendingMail();
+        Convertible convert = new ConvertTxt_Pdf();
+        convert.getCheckPDF();
 
 
-//        System.out.println(crudDB.create(15, "Ananas.", 7.5, true));
-//           crudDB.delete(15);
+//        System.out.println(crudDB.create(18, "Ananas..", 7.5, true));
+//        crudDB.delete(18);
 //        System.out.println(crudDB.update(17, "Banana...", 0.50, false));
 
-       productConnectionDB.closeConnection();
+        productConnectionDB.closeConnection();
     }
 }
