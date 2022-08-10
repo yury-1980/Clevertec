@@ -22,7 +22,7 @@ public class Requests {
             "         join product_price PP on pr.id_product = PP" +
             ".product_id " +
             "         join discount D on pr.id_product = D.product_id" +
-            " WHERE pr.id_product >= 1 AND pr.id_product <= ?";
+            " WHERE pr.id_product <= ?";
 
     public static final String UPDATE_PRODUCT_PRICE = "UPDATE product_price " +
             "SET price = ? WHERE product_id = ?";

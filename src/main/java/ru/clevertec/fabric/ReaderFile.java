@@ -25,9 +25,10 @@ public class ReaderFile {
         String str;
 
         String path = new File("").getAbsolutePath();
+        final String PRODUCTS = "/src/main/resources/products.txt";
 
         try (FileReader reader = new FileReader(path
-                + "/src/main/resources/products.txt");
+                + PRODUCTS);
              Scanner scanner = new Scanner(reader)) {
             scanner.useLocale(Locale.ENGLISH);
 

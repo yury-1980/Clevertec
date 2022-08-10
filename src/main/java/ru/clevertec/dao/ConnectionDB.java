@@ -1,8 +1,10 @@
 package ru.clevertec.dao;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class ConnectionDB {
 
@@ -10,19 +12,30 @@ public class ConnectionDB {
 
     private static ConnectionDB connectionDB = new ConnectionDB();
 
+    private final String CONNECTION_DB_PROPERTIES = "connectionDB.properties";
+
+    private Properties properties = new Properties();
+
     private ConnectionDB() {
-        String jdbc_URL = "jdbc:postgresql://localhost:5432/Control_DB";
-        String jdbc_USER = "postgres";
-        String jdbc_PSW = "postgres";
 
         try {
-            Class.forName("org.postgresql.Driver");
+            properties.load(ConnectionDB.class.getClassLoader()
+                    .getResourceAsStream(CONNECTION_DB_PROPERTIES));
+        } catch (IOException e) {
+            System.out.println("File not found properties!");
+            e.printStackTrace();
+        }
+
+        try {
+            Class.forName(properties.getProperty("DRIVER"));
         } catch (ClassNotFoundException e) {
             System.out.println("Driver not found.");
         }
 
         try {
-            connection = DriverManager.getConnection(jdbc_URL, jdbc_USER, jdbc_PSW);
+            connection = DriverManager.getConnection(properties
+                    .getProperty("jdbc_URL"), properties
+                    .getProperty("jdbc_USER"), properties.getProperty("jdbc_PSW"));
             System.out.println("Connection DB.");
             connection.setAutoCommit(false);
         } catch (SQLException throwables) {

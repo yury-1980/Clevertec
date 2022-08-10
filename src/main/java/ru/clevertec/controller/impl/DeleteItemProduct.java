@@ -16,6 +16,8 @@ public class DeleteItemProduct implements Command {
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
+        final int OK = 200;
+
         JsonObject data = new Gson().fromJson(req.getReader(), JsonObject.class);
         int id = Integer.parseInt(data.get("id").toString());
 
@@ -24,7 +26,7 @@ public class DeleteItemProduct implements Command {
 
         try (PrintWriter writer = resp.getWriter()) {
 //            writer.write(json);
-            resp.setStatus(200);
+            resp.setStatus(OK);
         }
     }
 }

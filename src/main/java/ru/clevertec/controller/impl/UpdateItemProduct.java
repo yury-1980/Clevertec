@@ -18,6 +18,8 @@ public class UpdateItemProduct implements Command {
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+        final int CREATED = 201;
         JsonObject data = new Gson().fromJson(req.getReader(), JsonObject.class);
 
         int id = Integer.parseInt(data.get("id").toString());
@@ -36,7 +38,7 @@ public class UpdateItemProduct implements Command {
 
         try (PrintWriter writer = resp.getWriter()) {
             writer.write(json);
-            resp.setStatus(201);
+            resp.setStatus(CREATED);
         }
     }
 }

@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class ProductCrudDB implements CrudDB {
 
-    ConnectionDB connectionDB = ConnectionDB.getInstance();
+    private ConnectionDB connectionDB = ConnectionDB.getInstance();
     private static PreparedStatement preparedStatement = null;
     private static ResultSet resultSet = null;
 

@@ -21,13 +21,14 @@ public class GetProductQuantity implements Command {
 //        JsonObject data = new Gson().fromJson(req.getReader(), JsonObject.class);
 //        int id = Integer.parseInt(data.get("id").toString());
         int page_size = Integer.parseInt(req.getParameter("size"));
+        final int OK = 200;
 
         CrudDB crudDB = new ProductCrudDB();
         Map<Integer, Product> products = crudDB.readAllDB(page_size);
         String json = new Gson().toJson(products);
         PrintWriter writer = resp.getWriter();
         writer.write(json);
-        resp.setStatus(200);
+        resp.setStatus(OK);
         writer.close();
     }
 }

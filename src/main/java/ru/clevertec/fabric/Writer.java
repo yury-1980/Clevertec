@@ -16,10 +16,12 @@ public class Writer {
     private static List<String> listInvalidData = ReaderDB.listInvalidData;
 
     public static void invalidDataWriting() {
+        final String INVALID_DATA = "src/main/resources/invalidData.txt";
         FileWriter writeToFile = null;
+
         try {
             String date = String.valueOf(new Date());
-            writeToFile = new FileWriter("src/main/resources/invalidData.txt", false);
+            writeToFile = new FileWriter(INVALID_DATA, false);
             writeToFile.write(date + "\n");
             for (String s : listInvalidData)
                 writeToFile.write(s + " ");
@@ -32,10 +34,11 @@ public class Writer {
     }
 
     public static void checkWritingFile() {
+        final String SALES_RECEIPT = "src/main/resources/salesReceipt.txt";
         FileWriter writeToFile = null;
 
         try {
-            writeToFile = new FileWriter("src/main/resources/salesReceipt.txt", false);
+            writeToFile = new FileWriter(SALES_RECEIPT, false);
         } catch (IOException e) {
             System.out.println("File not written!!!");
         }
@@ -56,7 +59,7 @@ public class Writer {
 
         print.close();
         System.out.println();
-        System.out.println("the file is located: " + "src/main/resources/salesReceipt.txt");
+        System.out.println("the file is located: " + SALES_RECEIPT);
     }
 
     public static void checkWritingConsol() {

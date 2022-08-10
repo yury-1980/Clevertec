@@ -16,12 +16,15 @@ public class GetProductAll implements Command {
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+        final int OK = 200;
+
         CrudDB crudDB = new ProductCrudDB();
         Map<Integer, Product> products = crudDB.readAllDB();
         String json = new Gson().toJson(products);
         PrintWriter writer = resp.getWriter();
         writer.write(json);
-        resp.setStatus(200);
+        resp.setStatus(OK);
         writer.close();
     }
 }

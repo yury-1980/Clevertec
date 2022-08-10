@@ -9,6 +9,7 @@ plugins {
     id 'groovy'
     id 'custom'
     id 'war'
+    id "io.freefair.lombok" version "6.5.0-rc1"
 //    id 'io.freefair.aspectj.post-compile-weaving' version '5.3.0'
 //    id 'idea'
 }
@@ -41,7 +42,6 @@ dependencies {
     compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
     compileOnly 'javax:javaee-api:7.0'
     implementation(group: 'com.aspose', name: 'aspose-words', version: '22.7', classifier: 'jdk16')
-
 
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
 //    implementation 'org.slf4j:slf4j-simple:1.7.36'
@@ -112,7 +112,7 @@ jar {
     manifest {
         attributes 'Main-Class': 'ru.clevertec.Main'
     }
-    // from configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+     from configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
 }
 
 /*test {
