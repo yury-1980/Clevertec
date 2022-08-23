@@ -1,5 +1,6 @@
 package ru.clevertec.orm;
 
+import org.springframework.stereotype.Component;
 import ru.clevertec.dao.ConnectionDB;
 import ru.clevertec.dao.Requests;
 import ru.clevertec.model.Product;
@@ -7,6 +8,7 @@ import ru.clevertec.model.Product;
 import java.sql.*;
 import java.util.Map;
 
+@Component
 public class ProductCrudDB implements CrudDB {
 
     private ConnectionDB connectionDB = ConnectionDB.getInstance();

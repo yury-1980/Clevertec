@@ -19,6 +19,7 @@ public class CommandType {
         commandMap.put("find_all", new GetProductAll());
         commandMap.put("update_item_product", new UpdateItemProduct());
         commandMap.put("find_quantity", new GetProductQuantity());
+        commandMap.put("purchase", new Purchase());
     }
 
 //    private CommandType(){}

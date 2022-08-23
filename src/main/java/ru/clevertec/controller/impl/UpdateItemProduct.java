@@ -24,8 +24,7 @@ public class UpdateItemProduct implements Command {
 
         int id = Integer.parseInt(data.get("id").toString());
         String name = data.get("title").toString().replaceAll("\"", "");
-        double price =
-                Double.parseDouble(data.get("price").toString());
+        double price = Double.parseDouble(data.get("price").toString());
         boolean discount = Boolean.parseBoolean(data.get("discount").toString());
 
         CrudDB UpdateProduct = new ProductCrudDB();

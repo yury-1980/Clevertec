@@ -1,13 +1,16 @@
 package ru.clevertec.service;
 
+import org.springframework.stereotype.Component;
 import ru.clevertec.model.Product;
 import ru.clevertec.orm.CrudDB;
 import ru.clevertec.orm.ProductCrudDB;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 //3-15.5 200-500 2-5 2-5 1-15 11-15 12-10 card-6 7-10
+@Component
 public class ProposedPurchase {
 
     CrudDB crudDB = new ProductCrudDB();
@@ -19,7 +22,6 @@ public class ProposedPurchase {
     static String[] str = new String[2];// id и кол-во
 
     public void masProducts(String[] args) {
-
         String regex_0 = "^([1-9]\\d?|100)$"; // id товара
         String regex_1 = "^([1-9]|1[0-9]|20)$";// Колличество товара
 
@@ -58,7 +60,6 @@ public class ProposedPurchase {
     }
 
     void addProduct(int id, int num) {
-
         if (!(masProducts.contains(products.get(id)))) {
             // Добавление товара в  предпологаемую покупку
             masProducts.add(products.get(id));

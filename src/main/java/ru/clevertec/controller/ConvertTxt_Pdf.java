@@ -1,7 +1,9 @@
 package ru.clevertec.controller;
 
 import com.aspose.words.Document;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ConvertTxt_Pdf implements Convertible {
 
     @Override
