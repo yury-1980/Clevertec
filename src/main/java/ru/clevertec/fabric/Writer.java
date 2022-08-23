@@ -1,9 +1,8 @@
 package ru.clevertec.fabric;
 
 import ru.clevertec.model.Check;
-import ru.clevertec.service.CheckDiscont;
+import ru.clevertec.service.CheckProductServiceImpl;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,12 +11,11 @@ import java.util.List;
 
 public class Writer {
 
-    private static List<Check> checks = CheckDiscont.checkList;
+    private static List<Check> checks = CheckProductServiceImpl.checks;
     private static List<String> listInvalidData = Reader.listInvalidData;
 
     public static void invalidDataWriting() {
         FileWriter writeToFile = null;
-
         try {
             String date = String.valueOf(new Date());
             writeToFile = new FileWriter("src/main/resources/invalidData.txt", false);
@@ -31,6 +29,7 @@ public class Writer {
             System.out.println("File not written!!!");
         }
     }
+
     public static void checkWritingFile() {
         FileWriter writeToFile = null;
 
@@ -53,7 +52,6 @@ public class Writer {
         print.printf("%s%9.2f\n", "Total amount without discount", Check.getSumTotal());
         print.printf("%s%32.2f\n", "Discont", Check.getDiscontSum());
         print.printf("%s%40.2f\n", "TOTAL", Check.getFinalAmount());
-        print.println(new Date());
 
         print.close();
         System.out.println();

@@ -1,13 +1,13 @@
 package ru.clevertec.model;
 
 public class Product {
-    private String title;
     private int id;
+    private String title;
     private double price;
     private boolean discount;
     private int number;
 
-    public Product(String title, int id, double price, boolean discount) {
+    public Product(int id, String title, double price, boolean discount) {
         this.title = title;
         this.id = id;
         this.price = price;
@@ -58,8 +58,8 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "title='" + title + '\'' +
-                ", id=" + id +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", price=" + price +
                 ", discount=" + discount +
                 ", number=" + number +

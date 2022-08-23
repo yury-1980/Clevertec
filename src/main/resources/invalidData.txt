@@ -1,2 +1,2 @@
-Wed Mar 16 14:12:16 MSK 2022
-100.00 02.02 110 MyApple 2.001 0 0.12 fa Appledddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd 15.545 tr 
+Mon Jul 18 12:20:14 MSK 2022
+02.02 110 MyApple 2.001 0 0.12 fa Appleddddddddddddddddddddddddd- 15.545 tr 
