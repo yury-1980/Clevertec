@@ -1,3 +1,4 @@
 2022-07-26 21:58:48 [main] INFO  ru.clevertec.service.handler.CheckProductServiceHandler - Worked - Handler!
 2022-07-26 21:58:48 [main] INFO  ru.clevertec.service.handler.CheckProductServiceHandler - service - 
 2022-07-26 21:58:48 [main] INFO  ru.clevertec.service.handler.CheckProductServiceHandler - service - [{"number":15,"title":"Milk","price":1.5,"totalSumOfOneItem":20.25},{"number":15,"title":"Mushrooms","price":10.0,"totalSumOfOneItem":135.0},{"number":10,"title":"Грибы","price":10.0,"totalSumOfOneItem":90.0},{"number":10,"title":"Herring","price":7.3,"totalSumOfOneItem":73.0}]
+
