@@ -1,6 +1,5 @@
 package ru.clevertec.service;
 
-import ru.clevertec.fabric.Reader;
 import ru.clevertec.model.Check;
 import ru.clevertec.model.Product;
 
