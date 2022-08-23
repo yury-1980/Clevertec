@@ -25,6 +25,7 @@ public class Main {
         ProposedPurchase proposedPurchase = new ProposedPurchase();
         proposedPurchase.masProducts(args);// Массив предпологаемой покупки
         CheckProductService service = new CheckProductServiceProxy();
+
         service.service();// Подсчёт всех сумм
         Writer.checkWritingConsol();
         Writer.checkWritingFile();
