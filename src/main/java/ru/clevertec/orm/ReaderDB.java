@@ -64,6 +64,7 @@ public class ReaderDB {
                 }
 
                 productMap.put(id, new Product(id, title, price, discount));
+
             }
 
         } catch (NoSuchElementException e) {

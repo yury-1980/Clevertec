@@ -1,5 +1,12 @@
 package ru.clevertec.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 public class Product {
     private int id;
     private String title;
@@ -15,7 +22,7 @@ public class Product {
         this.number = 0;
     }
 
-    public String getTitle() {
+    /*public String getTitle() {
         return title;
     }
 
@@ -64,5 +71,5 @@ public class Product {
                 ", discount=" + discount +
                 ", number=" + number +
                 '}';
-    }
+    }*/
 }

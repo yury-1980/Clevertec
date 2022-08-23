@@ -1,5 +1,11 @@
 package ru.clevertec.model;
 
+import lombok.*;
+
+@Setter
+@Getter
+@ToString
+@AllArgsConstructor
 public class Check {
     private int number;
     private String title;
@@ -11,7 +17,7 @@ public class Check {
     private static double discontSum;// Сумма скидки
     private static double finalAmount; // Окочательная сумма
 
-    public Check(int number, String title, double price, double totalSumOfOneItem) {
+  /*  public Check(int number, String title, double price, double totalSumOfOneItem) {
         this.number = number;
         this.title = title;
         this.price = price;
@@ -48,7 +54,7 @@ public class Check {
 
     public void setTotalSumOfOneItem(double totalSumOfOneItem) {
         this.totalSumOfOneItem = totalSumOfOneItem;
-    }
+    }*/
 
     public static double getSumTotal() {
         return sumTotal;
@@ -90,7 +96,7 @@ public class Check {
         Check.finalAmount = finalAmount;
     }
 
-    @Override
+   /* @Override
     public String toString() {
         return "Check{" +
                 "number=" + number +
@@ -98,5 +104,5 @@ public class Check {
                 ", price=" + price +
                 ", totalSumOfOneItem=" + totalSumOfOneItem +
                 '}';
-    }
+    }*/
 }

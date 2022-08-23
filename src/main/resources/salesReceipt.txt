@@ -2,10 +2,8 @@
 QTY    DESCRIPTION         PRICE     TOTAL
 _______________________________________________
 015  | Milk             |   1,50 |   20,25
-015  | Mushrooms        |  10,00 |  135,00
-010  | Грибы            |  10,00 |   90,00
 010  | Herring          |   7,30 |   73,00
 ===============================================
-Total amount without discount   345,50
-Discont                           27,25
-TOTAL                                  318,25
+Total amount without discount    95,50
+Discont                            2,25
+TOTAL                                   93,25
