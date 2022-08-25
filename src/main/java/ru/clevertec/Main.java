@@ -1,12 +1,18 @@
 package ru.clevertec;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import ru.clevertec.controller.ConvertTxt_Pdf;
 import ru.clevertec.controller.Convertible;
+import ru.clevertec.dao.ConnectionDB;
 import ru.clevertec.fabric.Writer;
+import ru.clevertec.model.Product;
 import ru.clevertec.orm.CrudDB;
+import ru.clevertec.orm.ProductCrudDB;
 import ru.clevertec.service.CheckProductService;
 import ru.clevertec.service.ProposedPurchase;
 import ru.clevertec.service.proxy.CheckProductServiceProxy;
+
+import java.util.Map;
 
 public class Main {
 
@@ -14,8 +20,6 @@ public class Main {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
                 SpringConfig.class);
-
-        CrudDB crudDB = context.getBean("productCrudDB", CrudDB.class);
 
         ProposedPurchase proposedPurchase = context.getBean("proposedPurchase"
                 , ProposedPurchase.class);
@@ -30,13 +34,6 @@ public class Main {
 //        Email.sendingMail();
         Convertible convert = context.getBean("convertTxt_Pdf", Convertible.class);
         convert.getCheckPDF();
-
-        /*for (Map.Entry<Integer, Product> map : crudDB.readAllDB().entrySet()) {
-            System.out.println(map);
-        }*/
-//        System.out.println(crudDB.create(18, "Ananas..", 7.5, true));
-//        crudDB.delete(18);
-//        System.out.println(crudDB.update(17, "Banana...", 0.50, false));
 
 //        ConnectionDB productConnectionDB = ConnectionDB.getInstance();
 //        productConnectionDB.closeConnection();

@@ -1,6 +1,7 @@
 package ru.clevertec.controller.impl;
 
 import com.google.gson.Gson;
+import org.springframework.stereotype.Component;
 import ru.clevertec.Main;
 import ru.clevertec.controller.Command;
 import ru.clevertec.dao.ConnectionDB;
@@ -13,9 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@Component
 public class Purchase implements Command {
 
-        private  ConnectionDB connectionDB = ConnectionDB.getInstance();
+    private ConnectionDB connectionDB = ConnectionDB.getInstance();
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {

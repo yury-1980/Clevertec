@@ -11,7 +11,7 @@ import java.util.Map;
 @Component
 public class ProductCrudDB implements CrudDB {
 
-    private ConnectionDB connectionDB = ConnectionDB.getInstance();
+    private final ConnectionDB connectionDB = ConnectionDB.getInstance();
     private static PreparedStatement preparedStatement = null;
     private static ResultSet resultSet = null;
 

@@ -10,7 +10,7 @@ public class ConnectionDB {
 
     private Connection connection;
 
-    private static ConnectionDB connectionDB = new ConnectionDB();
+    private static final ConnectionDB connectionDB = new ConnectionDB();
 
     private final String CONNECTION_DB_PROPERTIES = "connectionDB.properties";
 

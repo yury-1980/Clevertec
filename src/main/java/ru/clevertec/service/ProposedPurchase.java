@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import static ru.clevertec.validation.StringValidation.*;
+
 //3-15.5 200-500 2-5 2-5 1-15 11-15 12-10 card-6 7-10
 @Component
 public class ProposedPurchase {
@@ -22,8 +24,6 @@ public class ProposedPurchase {
     static String[] str = new String[2];// id и кол-во
 
     public void masProducts(String[] args) {
-        String regex_0 = "^([1-9]\\d?|100)$"; // id товара
-        String regex_1 = "^([1-9]|1[0-9]|20)$";// Колличество товара
 
         for (String arg : args) {
             str = arg.split("-");
@@ -33,8 +33,8 @@ public class ProposedPurchase {
 
             if (!(str[0].equals("card"))) {
 
-                if ((!str[0].matches(regex_0))
-                        || (!str[1].matches(regex_1))) {
+                if ((!str[0].matches(regId))
+                        || (!str[1].matches(quantityOfGoods))) {
                     continue;
                 }
                 try {
