@@ -17,45 +17,6 @@ public class Check {
     private static double discontSum;// Сумма скидки
     private static double finalAmount; // Окочательная сумма
 
-  /*  public Check(int number, String title, double price, double totalSumOfOneItem) {
-        this.number = number;
-        this.title = title;
-        this.price = price;
-        this.totalSumOfOneItem = totalSumOfOneItem;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public double getTotalSumOfOneItem() {
-        return totalSumOfOneItem;
-    }
-
-    public void setTotalSumOfOneItem(double totalSumOfOneItem) {
-        this.totalSumOfOneItem = totalSumOfOneItem;
-    }*/
-
     public static double getSumTotal() {
         return sumTotal;
     }

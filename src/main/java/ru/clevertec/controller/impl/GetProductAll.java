@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.clevertec.controller.Command;
 import ru.clevertec.model.Product;
-import ru.clevertec.orm.CrudDB;
+import ru.clevertec.dao.CrudDB;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

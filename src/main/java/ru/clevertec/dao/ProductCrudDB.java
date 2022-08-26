@@ -1,14 +1,14 @@
-package ru.clevertec.orm;
+package ru.clevertec.dao;
 
-import org.springframework.stereotype.Component;
-import ru.clevertec.dao.ConnectionDB;
-import ru.clevertec.dao.Requests;
+import org.springframework.stereotype.Repository;
 import ru.clevertec.model.Product;
 
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Map;
 
-@Component
+@Repository
 public class ProductCrudDB implements CrudDB {
 
     private final ConnectionDB connectionDB = ConnectionDB.getInstance();

@@ -1,8 +1,8 @@
 package ru.clevertec.controller;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.clevertec.SpringConfig;
-import ru.clevertec.orm.CrudDB;
+import ru.clevertec.configuration.SpringConfig;
+import ru.clevertec.dao.CrudDB;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +31,7 @@ public class CommandType {
         commandMap.put("purchase", context.getBean("purchase",
                 Command.class));
     }
-//    private CommandType(){}
+
     public static Map<String, Command> getCommandMap() {
         return commandMap;
     }

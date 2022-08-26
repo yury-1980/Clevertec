@@ -1,20 +1,17 @@
 package ru.clevertec;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.clevertec.controller.ConvertTxt_Pdf;
+import ru.clevertec.configuration.SpringConfig;
 import ru.clevertec.controller.Convertible;
-import ru.clevertec.dao.ConnectionDB;
 import ru.clevertec.fabric.Writer;
-import ru.clevertec.model.Product;
-import ru.clevertec.orm.CrudDB;
-import ru.clevertec.orm.ProductCrudDB;
 import ru.clevertec.service.CheckProductService;
 import ru.clevertec.service.ProposedPurchase;
 import ru.clevertec.service.proxy.CheckProductServiceProxy;
 
-import java.util.Map;
-
 public class Main {
+
+   /* @Autowired
+    private static ProposedPurchase proposedPurchase;*/
 
     public static void main(String[] args) {
 
@@ -31,12 +28,9 @@ public class Main {
         Writer.checkWritingConsol();
         Writer.checkWritingFile();
         Writer.invalidDataWriting();
-//        Email.sendingMail();
-        Convertible convert = context.getBean("convertTxt_Pdf", Convertible.class);
+        Convertible convert = context.getBean("convertTxtPdf", Convertible.class);
         convert.getCheckPDF();
 
-//        ConnectionDB productConnectionDB = ConnectionDB.getInstance();
-//        productConnectionDB.closeConnection();
         context.close();
     }
 }

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.clevertec.controller.Command;
 import ru.clevertec.model.Product;
-import ru.clevertec.orm.CrudDB;
+import ru.clevertec.dao.CrudDB;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,8 +22,6 @@ public class GetProductQuantity implements Command {
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-//        JsonObject data = new Gson().fromJson(req.getReader(), JsonObject.class);
-//        int id = Integer.parseInt(data.get("id").toString());
         int page_size = Integer.parseInt(req.getParameter("size"));
         final int OK = 200;
 

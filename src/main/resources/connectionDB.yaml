@@ -1,0 +1,11 @@
+jdbc_URL: jdbc:postgresql://localhost:5432/Control_DB
+jdbc_USER: postgres
+jdbc_PSW: postgres
+DRIVER: org.postgresql.Driver
+
+datasource:
+  url: jdbc:postgresql://localhost:5432/cash register
+  driver: org.postgresql.Driver
+  username: postgres
+  password: root
+

@@ -12,7 +12,7 @@ public class ConnectionDB {
 
     private static final ConnectionDB connectionDB = new ConnectionDB();
 
-    private final String CONNECTION_DB_PROPERTIES = "connectionDB.properties";
+    private final String CONNECTION_DB_PROPERTIES = "connectionDB.yaml";
 
     private Properties properties = new Properties();
 

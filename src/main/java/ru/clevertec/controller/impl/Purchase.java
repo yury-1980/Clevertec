@@ -5,9 +5,8 @@ import org.springframework.stereotype.Component;
 import ru.clevertec.Main;
 import ru.clevertec.controller.Command;
 import ru.clevertec.dao.ConnectionDB;
-import ru.clevertec.orm.CrudDB;
-import ru.clevertec.orm.ProductCrudDB;
-import ru.clevertec.service.ProposedPurchase;
+import ru.clevertec.dao.CrudDB;
+import ru.clevertec.dao.ProductCrudDB;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,14 +21,10 @@ public class Purchase implements Command {
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         final int OK = 200;
-        CrudDB crudDB = new ProductCrudDB();
         String[] products = req.getParameterValues("p");
 
         for (String str : products)
             System.out.println(str);
-
-//        ProposedPurchase proposedPurchase = new ProposedPurchase();
-//        proposedPurchase.masProducts(products);
 
         Main.main(products);
 

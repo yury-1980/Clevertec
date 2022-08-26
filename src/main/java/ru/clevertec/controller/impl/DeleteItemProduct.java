@@ -5,7 +5,7 @@ import com.google.gson.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.clevertec.controller.Command;
-import ru.clevertec.orm.CrudDB;
+import ru.clevertec.dao.CrudDB;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +29,6 @@ public class DeleteItemProduct implements Command {
         deleteProductId.delete(id);
 
         try (PrintWriter writer = resp.getWriter()) {
-//            writer.write(json);
             resp.setStatus(OK);
         }
     }
