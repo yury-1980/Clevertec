@@ -18,8 +18,12 @@ import java.util.List;
 @Component
 public class UpdateItemProduct implements Command {
 
+    private CrudDB UpdateProduct;
+
     @Autowired
-    CrudDB UpdateProduct;
+    public UpdateItemProduct(CrudDB updateProduct) {
+        UpdateProduct = updateProduct;
+    }
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {

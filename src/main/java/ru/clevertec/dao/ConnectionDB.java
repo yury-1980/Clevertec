@@ -27,15 +27,15 @@ public class ConnectionDB {
         }
 
         try {
-            Class.forName(properties.getProperty("DRIVER"));
+            Class.forName(properties.getProperty("driver"));
         } catch (ClassNotFoundException e) {
             System.out.println("Driver not found.");
         }
 
         try {
             connection = DriverManager.getConnection(properties
-                    .getProperty("jdbc_URL"), properties
-                    .getProperty("jdbc_USER"), properties.getProperty("jdbc_PSW"));
+                    .getProperty("url"), properties
+                    .getProperty("user"), properties.getProperty("psw"));
             System.out.println("Connection DB.");
             connection.setAutoCommit(false);
         } catch (SQLException throwables) {

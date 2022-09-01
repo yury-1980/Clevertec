@@ -16,8 +16,12 @@ import java.util.Map;
 @Component
 public class GetProductAll implements Command {
 
+    private CrudDB crudDB;
+
     @Autowired
-    CrudDB crudDB;
+    public GetProductAll(CrudDB crudDB) {
+        this.crudDB = crudDB;
+    }
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {

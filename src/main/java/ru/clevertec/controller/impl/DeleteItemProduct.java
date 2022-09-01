@@ -15,8 +15,12 @@ import java.io.PrintWriter;
 @Component
 public class DeleteItemProduct implements Command {
 
+    private CrudDB deleteProductId;
+
     @Autowired
-    CrudDB deleteProductId;
+    public DeleteItemProduct(CrudDB deleteProductId) {
+        this.deleteProductId = deleteProductId;
+    }
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
