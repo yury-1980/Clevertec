@@ -2,10 +2,11 @@ package ru.clevertec.controller.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ru.clevertec.controller.Command;
 import ru.clevertec.model.Product;
-import ru.clevertec.orm.CrudDB;
-import ru.clevertec.orm.ProductCrudDB;
+import ru.clevertec.dao.CrudDB;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +15,15 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class UpdateItemProduct implements Command {
+
+    private CrudDB UpdateProduct;
+
+    @Autowired
+    public UpdateItemProduct(CrudDB updateProduct) {
+        UpdateProduct = updateProduct;
+    }
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -24,11 +33,9 @@ public class UpdateItemProduct implements Command {
 
         int id = Integer.parseInt(data.get("id").toString());
         String name = data.get("title").toString().replaceAll("\"", "");
-        double price =
-                Double.parseDouble(data.get("price").toString());
+        double price = Double.parseDouble(data.get("price").toString());
         boolean discount = Boolean.parseBoolean(data.get("discount").toString());
 
-        CrudDB UpdateProduct = new ProductCrudDB();
         Product product = UpdateProduct.update(id, name, price, discount);
 
         List<Product> products = new ArrayList<>();

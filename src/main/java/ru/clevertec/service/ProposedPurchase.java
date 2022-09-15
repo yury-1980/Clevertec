@@ -1,13 +1,18 @@
 package ru.clevertec.service;
 
+import org.springframework.stereotype.Service;
+import ru.clevertec.dao.CrudDB;
+import ru.clevertec.dao.ProductCrudDB;
 import ru.clevertec.model.Product;
-import ru.clevertec.orm.CrudDB;
-import ru.clevertec.orm.ProductCrudDB;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-//3-15.5 200-500 2-5 2-5 1-15 11-15 12-10 card-6 7-10
+import static ru.clevertec.validation.StringValidation.quantityOfGoods;
+import static ru.clevertec.validation.StringValidation.regId;
+
+@Service
 public class ProposedPurchase {
 
     CrudDB crudDB = new ProductCrudDB();
@@ -20,9 +25,6 @@ public class ProposedPurchase {
 
     public void masProducts(String[] args) {
 
-        String regex_0 = "^([1-9]\\d?|100)$"; // id товара
-        String regex_1 = "^([1-9]|1[0-9]|20)$";// Колличество товара
-
         for (String arg : args) {
             str = arg.split("-");
 
@@ -31,8 +33,8 @@ public class ProposedPurchase {
 
             if (!(str[0].equals("card"))) {
 
-                if ((!str[0].matches(regex_0))
-                        || (!str[1].matches(regex_1))) {
+                if ((!str[0].matches(regId))
+                        || (!str[1].matches(quantityOfGoods))) {
                     continue;
                 }
                 try {
@@ -58,7 +60,6 @@ public class ProposedPurchase {
     }
 
     void addProduct(int id, int num) {
-
         if (!(masProducts.contains(products.get(id)))) {
             // Добавление товара в  предпологаемую покупку
             masProducts.add(products.get(id));

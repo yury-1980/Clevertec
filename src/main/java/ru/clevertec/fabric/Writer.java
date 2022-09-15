@@ -2,7 +2,8 @@ package ru.clevertec.fabric;
 
 import ru.clevertec.model.Check;
 import ru.clevertec.service.CheckProductServiceImpl;
-import ru.clevertec.orm.ReaderDB;
+import ru.clevertec.dao.ReaderDB;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;

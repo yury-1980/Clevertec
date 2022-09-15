@@ -1,38 +1,37 @@
 package ru.clevertec.controller.impl;
 
 import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import ru.clevertec.Main;
 import ru.clevertec.controller.Command;
-import ru.clevertec.model.Product;
+import ru.clevertec.dao.ConnectionDB;
 import ru.clevertec.dao.CrudDB;
+import ru.clevertec.dao.ProductCrudDB;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Map;
 
 @Component
-public class GetProductQuantity implements Command {
+public class Purchase implements Command {
 
-    private CrudDB crudDB;
-
-    @Autowired
-    public GetProductQuantity(CrudDB crudDB) {
-        this.crudDB = crudDB;
-    }
+    private ConnectionDB connectionDB = ConnectionDB.getInstance();
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
-        int page_size = Integer.parseInt(req.getParameter("size"));
         final int OK = 200;
+        String[] products = req.getParameterValues("p");
 
-        Map<Integer, Product> products = crudDB.readAllDB(page_size);
-        String json = new Gson().toJson(products);
+        for (String str : products)
+            System.out.println(str);
+
+        Main.main(products);
+
+        String s = new Gson().toJson(products);
+
         PrintWriter writer = resp.getWriter();
-        writer.write(json);
+        writer.write(s);
         resp.setStatus(OK);
         writer.close();
     }

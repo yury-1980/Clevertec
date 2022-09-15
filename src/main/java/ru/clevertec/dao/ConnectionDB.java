@@ -10,9 +10,9 @@ public class ConnectionDB {
 
     private Connection connection;
 
-    private static ConnectionDB connectionDB = new ConnectionDB();
+    private static final ConnectionDB connectionDB = new ConnectionDB();
 
-    private final String CONNECTION_DB_PROPERTIES = "connectionDB.properties";
+    private final String CONNECTION_DB_PROPERTIES = "connectionDB.yaml";
 
     private Properties properties = new Properties();
 
@@ -27,15 +27,15 @@ public class ConnectionDB {
         }
 
         try {
-            Class.forName(properties.getProperty("DRIVER"));
+            Class.forName(properties.getProperty("driver"));
         } catch (ClassNotFoundException e) {
             System.out.println("Driver not found.");
         }
 
         try {
             connection = DriverManager.getConnection(properties
-                    .getProperty("jdbc_URL"), properties
-                    .getProperty("jdbc_USER"), properties.getProperty("jdbc_PSW"));
+                    .getProperty("url"), properties
+                    .getProperty("user"), properties.getProperty("psw"));
             System.out.println("Connection DB.");
             connection.setAutoCommit(false);
         } catch (SQLException throwables) {

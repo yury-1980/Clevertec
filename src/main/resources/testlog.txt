@@ -1,3 +1,1 @@
-2022-08-10 16:12:52 [main] INFO  ru.clevertec.service.handler.CheckProductServiceHandler - Worked - Handler!
-2022-08-10 16:12:52 [main] INFO  ru.clevertec.service.handler.CheckProductServiceHandler - service - 
-2022-08-10 16:12:52 [main] INFO  ru.clevertec.service.handler.CheckProductServiceHandler - service - [{"number":15,"title":"Milk","price":1.5,"totalSumOfOneItem":20.25},{"number":10,"title":"Herring","price":7.3,"totalSumOfOneItem":73.0}]
+2022-08-26 12:52:50 [main] WARN  org.springframework.context.annotation.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'addItemProduct': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [ru.clevertec.controller.impl.AddItemProduct] from ClassLoader [sun.misc.Launcher$AppClassLoader@73d16e93]

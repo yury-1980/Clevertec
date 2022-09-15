@@ -1,4 +1,4 @@
-package ru.clevertec;
+package ru.clevertec.controller;
 
 import ru.clevertec.controller.Command;
 import ru.clevertec.controller.CommandProvider;
