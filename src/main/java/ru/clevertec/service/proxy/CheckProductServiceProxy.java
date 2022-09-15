@@ -1,5 +1,7 @@
+/*
 package ru.clevertec.service.proxy;
 
+import org.springframework.stereotype.Component;
 import ru.clevertec.model.Check;
 import ru.clevertec.service.CheckProductServiceImpl;
 import ru.clevertec.service.CheckProductService;
@@ -52,3 +54,4 @@ public class CheckProductServiceProxy implements CheckProductService {
         checkProductService.setFinalAmount();
     }
 }
+*/

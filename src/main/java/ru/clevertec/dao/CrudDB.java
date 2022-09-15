@@ -1,4 +1,4 @@
-package ru.clevertec.orm;
+package ru.clevertec.dao;
 
 import ru.clevertec.model.Product;
 

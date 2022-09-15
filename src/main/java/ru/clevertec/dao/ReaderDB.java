@@ -1,10 +1,12 @@
-package ru.clevertec.orm;
+package ru.clevertec.dao;
 
 import ru.clevertec.model.Product;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
+
+import static ru.clevertec.validation.StringValidation.*;
 
 public class ReaderDB {
     public static List<String> listInvalidData = new ArrayList<>();
@@ -16,10 +18,6 @@ public class ReaderDB {
         String title;
         double price;
         boolean discount;
-        String regId = "^([1-9]\\d?|100)$";
-        String regTitle = "^([A-Z][a-z]{2,29})|([А-Я][а-я]{2,29})$";
-        String regPrice = "^([1-9]\\d?\\.\\d\\d|100\\.00)$";
-        String regDiscont = "^true|false$";
         String str;
 
         try {
