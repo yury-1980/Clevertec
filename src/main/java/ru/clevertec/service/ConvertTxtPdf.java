@@ -2,6 +2,7 @@ package ru.clevertec.service;
 
 import com.aspose.words.Document;
 import org.springframework.stereotype.Component;
+import ru.clevertec.controller.Convertible;
 
 @Component
 public class ConvertTxtPdf implements Convertible {

@@ -1,3 +1,4 @@
+/*
 package ru.clevertec.service;
 
 import ru.clevertec.model.Check;
@@ -5,9 +6,8 @@ import ru.clevertec.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-public class CheckDiscontService implements ProductService {
+public class CheckProductServiceImpl implements CheckProductService {
 
     // Массив предпологаемой покупки
     public static List<Product> masProducts = ProposedPurchase.masProducts;
@@ -94,4 +94,4 @@ public class CheckDiscontService implements ProductService {
         Check.setFinalAmount(Check.getDiscountTotal()
                 + Check.getTotalCostOfAllNon_discountItem());
     }
-}
+}*/

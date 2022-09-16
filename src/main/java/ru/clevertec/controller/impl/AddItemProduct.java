@@ -11,10 +11,12 @@ import ru.clevertec.repository.ProductReository;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.Transactional;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Optional;
 
+@Transactional
 @AllArgsConstructor
 public class AddItemProduct implements Command {
 

@@ -1,4 +1,4 @@
-package ru.clevertec.service;
+package ru.clevertec.controller;
 
 @FunctionalInterface
 public interface Convertible {

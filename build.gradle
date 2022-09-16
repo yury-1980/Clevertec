@@ -37,11 +37,12 @@ dependencies {
 //    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.0'
 //    implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.14.0'
 // https://mvnrepository.com/artifact/org.postgresql/postgresql
-    implementation 'org.postgresql:postgresql:42.3.3'
+    runtimeOnly 'org.postgresql:postgresql:42.3.3'
     // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
     compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
     compileOnly 'javax:javaee-api:7.0'
     implementation(group: 'com.aspose', name: 'aspose-words', version: '22.7', classifier: 'jdk16')
+    implementation 'org.liquibase:liquibase-core:4.15.0'
 
     implementation 'org.springframework:spring-core:5.3.20'
     implementation 'org.springframework:spring-context:5.3.20'
@@ -52,8 +53,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.0'
 //    // https://mvnrepository.com/artifact/org.springframework.data/spring-data-elasticsearch
 //    implementation 'org.springframework.data:spring-data-elasticsearch:4.4.0'
-
-
 
 
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
@@ -125,7 +124,7 @@ jar {
     manifest {
         attributes 'Main-Class': 'ru.clevertec.Main'
     }
-     from configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    from configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
 }
 
 /*test {
