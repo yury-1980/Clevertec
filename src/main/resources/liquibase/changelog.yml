@@ -1,43 +1,126 @@
 databaseChangeLog:
 
   - changeSet:
-      id: DEV-1
-      author: devmarkru
+      id: 1663778813046-1
+      author: Юрий (generated)
       changes:
         - createTable:
-            tableName: article
-            remarks: Статьи
             columns:
               - column:
-                  name: id
-                  type: integer
                   autoIncrement: true
                   constraints:
+                    nullable: false
                     primaryKey: true
-                    primaryKeyName: article_pk
-                    nullable: false
+                    primaryKeyName: discount_pk
+                  name: id
+                  type: SERIAL
               - column:
-                  name: url
-                  type: varchar(50)
-                  remarks: Постоянная ссылка на статью
-                  constraints:
-                    unique: true
-                    uniqueConstraintName: article_url_uq
-                    nullable: false
-              - column:
-                  name: title
-                  type: varchar(50)
                   constraints:
                     nullable: false
+                  name: price
+                  type: numeric(5, 2)
               - column:
-                  name: is_visible
-                  type: boolean
-                  defaultValue: false
                   constraints:
                     nullable: false
+                  name: discount
+                  type: BOOLEAN
+            tableName: pricediscount
+  - changeSet:
+      id: 1663778813046-2
+      author: Юрий (generated)
+      changes:
+        - loadData:
+            columns:
               - column:
-                  name: created
-                  type: timestamp without time zone
-                  defaultValue: now()
+                  header: id
+                  name: id
+                  type: NUMERIC
+              - column:
+                  header: price
+                  name: price
+                  type: NUMERIC
+              - column:
+                  header: discount
+                  name: discount
+                  type: BOOLEAN
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: data/pricediscount.csv
+            quotchar: '"'
+            separator: ','
+            relativeToChangelogFile: true
+            tableName: pricediscount
+  - changeSet:
+      id: 1663778813046-3
+      author: Юрий (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
                   constraints:
                     nullable: false
+                    primaryKey: true
+                    primaryKeyName: product_pk
+                  name: id
+                  type: SERIAL
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(64)
+              - column:
+                  name: prdis_id
+                  type: INTEGER
+            tableName: product
+  - changeSet:
+      id: 1663778813046-4
+      author: Юрий (generated)
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: id
+                  name: id
+                  type: NUMERIC
+              - column:
+                  header: name
+                  name: name
+                  type: STRING
+              - column:
+                  header: prdis_id
+                  name: prdis_id
+                  type: NUMERIC
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: data/product.csv
+            quotchar: '"'
+            separator: ','
+            relativeToChangelogFile: true
+            tableName: product
+  - changeSet:
+      id: 1663778813046-5
+      author: Юрий (generated)
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: name
+            indexName: product_name_uindex
+            tableName: product
+            unique: true
+  - changeSet:
+      id: 1663778813046-6
+      author: Юрий (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: prdis_id
+            baseTableName: product
+            constraintName: product_pricediscount_id_fk
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: pricediscount
+            validate: true

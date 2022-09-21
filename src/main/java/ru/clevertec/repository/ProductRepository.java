@@ -10,7 +10,7 @@ import ru.clevertec.entity.Product;
 import java.util.Optional;
 
 @Repository
-public interface ProductReository extends JpaRepository<Product, Integer> {
+public interface ProductRepository extends JpaRepository<Product, Integer> {
     Optional<Product> findByName(String name);
     Optional<Product> findTopByOrderByIdDesc();
 

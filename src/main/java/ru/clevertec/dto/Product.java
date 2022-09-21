@@ -1,4 +1,4 @@
-package ru.clevertec.model;
+package ru.clevertec.dto;
 
 import lombok.Getter;
 import lombok.Setter;

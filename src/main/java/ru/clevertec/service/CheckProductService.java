@@ -1,6 +1,6 @@
 package ru.clevertec.service;
 
-import ru.clevertec.model.Check;
+import ru.clevertec.dto.Check;
 
 import java.util.List;
 

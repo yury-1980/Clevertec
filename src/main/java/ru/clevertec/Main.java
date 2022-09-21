@@ -3,7 +3,7 @@ package ru.clevertec;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.clevertec.configuration.SpringConfig;
-import ru.clevertec.controller.Convertible;
+import ru.clevertec.service.Convertible;
 import ru.clevertec.fabric.Writer;
 import ru.clevertec.service.CheckProductService;
 import ru.clevertec.service.ProposedPurchase;

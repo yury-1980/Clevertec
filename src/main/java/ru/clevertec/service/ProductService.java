@@ -1,24 +1,24 @@
 package ru.clevertec.service;
 
-import ru.clevertec.model.Check;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestParam;
+import ru.clevertec.entity.Product;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductService {
-    List<Check> service();
 
-    // Общая стоимость всего товара по скидке, добавление в чек
-    void setDiscountTotal(String[] str);
+    ResponseEntity<Optional<Product>> addItemProduct(HttpServletRequest request);
 
-    // Общая стоимость всего нескидочного товара, добавление в чек
-    void setTotalCostOfAllNon_discountItem(String[] str);
+    ResponseEntity<String> deleteIdProduct(@RequestParam("id") String idProduct);
 
-    // Полная стоимость всего товара (без скидки)
-    void setSumTotal();
+    ResponseEntity<List<Product>> getProductAll();
 
-    // Сумма всей скидки
-    void setDiscontSum();
+    ResponseEntity<Optional<Product>> getProductId(@RequestParam("id") String id);
 
-    // Окончательная сумма (с учётом скидок)
-    void setFinalAmount();
+    ResponseEntity<List<Product>> getProductPage(@RequestParam("page") String page);
+
+    ResponseEntity<Optional<Product>> updateIdProduct(HttpServletRequest request);
 }

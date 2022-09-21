@@ -4,7 +4,7 @@ package ru.clevertec.service;
 import org.springframework.stereotype.Service;
 import ru.clevertec.dao.CrudDB;
 import ru.clevertec.dao.ProductCrudDB;
-import ru.clevertec.model.Product;
+import ru.clevertec.dto.Product;
 
 import java.util.ArrayList;
 import java.util.List;

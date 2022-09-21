@@ -1,5 +1,6 @@
 package ru.clevertec.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,6 +24,7 @@ public class Product {
     @Column(name = "prdis_id")
     private Integer priceDiscountId;
 
+    @JsonIgnore
     @ToString.Exclude
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "prdis_id", insertable = false, updatable = false)

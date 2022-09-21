@@ -24,6 +24,5 @@ public class Discount {
 
     @ToString.Exclude
     @OneToOne(mappedBy = "discount", fetch = FetchType.LAZY)
-//   @JoinColumn(name = "product_id", insertable = false, updatable = false)
     private Product product;
 }

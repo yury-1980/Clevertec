@@ -2,8 +2,8 @@ package ru.clevertec.service;
 
 import org.junit.jupiter.api.*;
 import ru.clevertec.fabric.ReaderFile;
-import ru.clevertec.model.Check;
-import ru.clevertec.model.Product;
+import ru.clevertec.dto.Check;
+import ru.clevertec.dto.Product;
 
 import java.util.ArrayList;
 import java.util.List;
