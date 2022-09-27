@@ -10,8 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import ru.clevertec.entity.Discount;
 import ru.clevertec.entity.Product;
-import ru.clevertec.exception.ProductNotFoundException;
-import ru.clevertec.repository.DiscountRepoitory;
+import ru.clevertec.repository.DiscountRepository;
 import ru.clevertec.repository.ProductRepository;
 import ru.clevertec.service.ProductService;
 
@@ -24,7 +23,7 @@ import java.util.Optional;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    DiscountRepoitory discountRepoitory;
+    DiscountRepository discountRepository;
     ProductRepository productRepository;
 
     @Override
@@ -45,9 +44,9 @@ public class ProductServiceImpl implements ProductService {
 
                 Discount discountEnt =
                         Discount.builder().price(price).discount(discount).build();
-                discountRepoitory.save(discountEnt);
+                discountRepository.save(discountEnt);
 
-                Integer lastId = discountRepoitory.findTopByOrderByIdDesc().getId();
+                Integer lastId = discountRepository.findTopByOrderByIdDesc().getId();
 
                 Product productEnt = Product.builder().name(name).priceDiscountId(lastId)
                         .build();
@@ -119,8 +118,8 @@ public class ProductServiceImpl implements ProductService {
         if (productRepository.existsById(id)) {
             Discount discountEnt =
                     Discount.builder().id(id).price(price).discount(discount).build();
-            discountRepoitory.save(discountEnt);
-            Integer lastId = discountRepoitory.findTopByOrderByIdDesc().getId();
+            discountRepository.save(discountEnt);
+            Integer lastId = discountRepository.findTopByOrderByIdDesc().getId();
 
             Product productEnt =
                     Product.builder().id(id).name(name).priceDiscountId(lastId)
