@@ -56,14 +56,4 @@ public class Check {
     public static void setFinalAmount(double finalAmount) {
         Check.finalAmount = finalAmount;
     }
-
-   /* @Override
-    public String toString() {
-        return "Check{" +
-                "number=" + number +
-                ", title='" + title + '\'' +
-                ", price=" + price +
-                ", totalSumOfOneItem=" + totalSumOfOneItem +
-                '}';
-    }*/
 }
